@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white min-h-screen antialiased;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-white/5 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-purple-500/50 rounded-full hover:bg-purple-500;
+  }
+}
+
+@layer components {
+  /* Glassmorphism base */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl transition-all duration-300 hover:border-purple-500/40 hover:shadow-lg hover:shadow-purple-500/10;
+  }
+  
+  .glass-sidebar {
+    @apply bg-black/40 backdrop-blur-xl border-r border-white/10;
+  }
+  
+  /* Sidebar items */
+  .nav-item {
+    @apply flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 cursor-pointer text-gray-300 hover:text-white hover:bg-white/10;
+  }
+  
+  .nav-item-active {
+    @apply bg-purple-500/20 text-purple-400 border-l-4 border-purple-500;
+  }
+  
+  /* Player controls */
+  .player-btn {
+    @apply p-2 rounded-full transition-all duration-200 hover:scale-105 hover:bg-white/10 active:scale-95;
+  }
+  
+  .player-btn-primary {
+    @apply bg-purple-500 text-white hover:bg-purple-600 hover:scale-105 shadow-lg shadow-purple-500/30;
+  }
+  
+  /* Progress bar */
+  .progress-bar {
+    @apply h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative;
+  }
+  
+  /* Song card hover effect */
+  .song-card {
+    @apply glass-card p-4 cursor-pointer transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-2.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full font-semibold transition-all duration-200 hover:opacity-90 hover:shadow-lg hover:shadow-purple-500/30 active:scale-95;
+  }
+  
+  /* Inputs */
+  .input-glass {
+    @apply w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all;
+  }
+}
+
+/* Smooth dropdown animation */
+.dropdown-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.dropdown-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+.dropdown-exit {
+  opacity: 1;
+}
+.dropdown-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 150ms, transform 150ms;
+}
+
+.player-btn {
+  @apply p-2 rounded-full transition-all duration-200 hover:scale-105 hover:bg-white/10 active:scale-95;
+}
+.player-btn-primary {
+  @apply p-3 rounded-full bg-purple-500 text-white hover:bg-purple-600 hover:scale-105 shadow-lg shadow-purple-500/30 transition-all duration-200;
+}
+.progress-bar {
+  @apply h-1.5 bg-white/20 rounded-full overflow-hidden cursor-pointer;
+}
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full relative;
+}
+.glass {
+  @apply bg-white/5 backdrop-blur-xl border border-white/10;
+}
